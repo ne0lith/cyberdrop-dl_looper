@@ -1,0 +1,66 @@
+- Configuration:
+    Apply_Config: true
+    Authentication:
+      pixeldrain_api_key: ''
+      simpcity_password: ''
+      simpcity_username: ''
+      socialmediagirls_password: ''
+      socialmediagirls_username: ''
+      xbunker_password: ''
+      xbunker_username: ''
+    Files:
+      db_file: download_history.sqlite
+      errored_urls_file: errored_urls.csv
+      input_file: urls.txt
+      log_file: downloader.log
+      output_folder: Downloads
+      output_last_forum_post_file: latest_forum_post.txt
+      unsupported_urls_file: unsupported_urls.csv
+    Forum_Options:
+      output_last_forum_post: true
+      separate_posts: false
+    Ignore:
+      exclude_audio: false
+      exclude_images: false
+      exclude_other: false
+      exclude_videos: false
+      ignore_cache: false
+      ignore_history: false
+      skip_hosts: []
+    JDownloader:
+      apply_jdownloader: false
+      jdownloader_device: ''
+      jdownloader_password: ''
+      jdownloader_username: ''
+    Progress_Options:
+      dont_show_album_progress: false
+      dont_show_domain_progress: false
+      dont_show_file_progress: false
+      dont_show_forum_progress: false
+      dont_show_overall_progress: false
+      dont_show_thread_progress: false
+      hide_new_progress: false
+    Ratelimiting:
+      connection_timeout: 15
+      ratelimit: 7
+      throttle: 0.5
+    Runtime:
+      allow_insecure_connections: true
+      attempts: 5
+      block_sub_folders: true
+      disable_attempt_limit: false
+      include_id: false
+      output_errored_urls: true
+      output_unsupported_urls: true
+      proxy: ''
+      remove_bunkr_identifier: true
+      required_free_space: 25
+      simultaneous_downloads_per_domain: 4
+      skip_download_mark_completed: false
+    Sorting:
+      sort_directory: Sorted Downloads
+      sort_downloads: true
+      sorted_audio: '{sort_dir}/{base_dir}/audio'
+      sorted_images: '{sort_dir}/{base_dir}/images'
+      sorted_others: '{sort_dir}/{base_dir}/other'
+      sorted_videos: '{sort_dir}/{base_dir}/videos'
