@@ -1,10 +1,19 @@
-#cyberdrop-dl_looper
+## cyberdrop-dl_looper
 
-just update the config.yaml with your preferences! we're just using mine by default.
-and then run cyberdrop.bat
+- Update the config.yaml with your preferences. (we're using what I found most convenient.)
+- Run cyberdrop.bat
 
-do not edit
+```
+Do not edit these lines unless you modify the included .py files to accomodate.
+
 input_file: urls.txt
 output_last_forum_post_file: latest_forum_post.txt
+```
 
-unless you also edit the included .py files to accomodate.
+On my list of things to do
+
+- [ ] Create a looper.py for that use case.
+- [ ] Create a looper.ps1 for that use case.
+
+
+*Not sure if this works as-is. I've modified some stuff to remove anything identifying from my files. I still need to test the public release.*
