@@ -13,8 +13,8 @@ pushd %current_dir%
 goto update
 
 :update
-rem this will automatically update cyberdrop-dl to the latest version every loop
-rem and automatically replace thread urls in urls.txt with the latest thread urls from latest_forum_posts.txt
+rem this will automatically update cyberdrop-dl to the latest version every loop, if an update is available
+rem and automatically replace thread urls in urls.txt with the latest associated thread url from latest_forum_posts.txt
 python upgrade_pip_package.py cyberdrop-dl
 python latest_thread_to_urls.py
 
