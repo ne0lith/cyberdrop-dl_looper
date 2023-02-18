@@ -1,7 +1,7 @@
 ## cyberdrop-dl_looper
 
 - Update the config.yaml with your preferences. (we're using what I found most convenient.)
-- Run cyberdrop.bat
+- Run looper.bat
 
 ```
 Do not edit these lines unless you modify the included .py files to accomodate.
