@@ -4,7 +4,7 @@
 - Run looper.bat
 
 ```
-Do not edit these lines unless you modify the included .py files to accomodate.
+Do not edit these lines unless you modify line 77 of latest_thread_to_urls.py to accomodate.
 
 input_file: urls.txt
 output_last_forum_post_file: latest_forum_post.txt
