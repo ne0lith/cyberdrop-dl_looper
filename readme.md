@@ -16,4 +16,6 @@ On my list of things to do
 - [ ] Create a looper.ps1 for that use case.
 
 
-*Not sure if this works as-is. I've modified some stuff to remove anything identifying from my files. I still need to test the public release.*
+*Not sure if this works as-is. I've modified some stuff to remove anything identifying from my files.*
+
+*I still need to test the public release.*
