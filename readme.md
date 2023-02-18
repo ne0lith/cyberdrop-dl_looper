@@ -7,14 +7,13 @@ This environment assumes a few things:
 
 If so, you can move on! If not, sorry!
 - Update the config.yaml with your preferences. (we're using what I found most convenient.)
-- Run looper.bat
-
 ```
 Do not edit these lines unless you modify line 77 of latest_thread_to_urls.py to accomodate.
 
 input_file: urls.txt
 output_last_forum_post_file: latest_forum_post.txt
 ```
+- Run looper.bat
 
 On my list of things to do
 
