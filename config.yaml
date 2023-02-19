@@ -10,12 +10,12 @@
       xbunker_username: ''
     Files:
       db_file: download_history.sqlite
-      errored_urls_file: logs/errored_urls.csv
-      input_file: logs/urls.txt
-      log_file: logs/downloader.log
+      errored_urls_file: 'logs/errored_urls.csv'
+      input_file: 'logs/urls.txt'
+      log_file: 'logs/downloader.log'
       output_folder: Downloads
-      output_last_forum_post_file: logs/latest_forum_post.txt
-      unsupported_urls_file: logs/unsupported_urls.csv
+      output_last_forum_post_file: 'logs/latest_forum_post.txt'
+      unsupported_urls_file: 'logs/unsupported_urls.csv'
     Forum_Options:
       output_last_forum_post: true
       separate_posts: false

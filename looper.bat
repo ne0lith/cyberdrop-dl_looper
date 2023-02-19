@@ -12,12 +12,9 @@ pushd %~dp0
 goto update
 
 :update
-rem uncomment the third script if you want to archive ["errored_urls.csv", "unsupported_urls.csv", "downloader.log"]
-rem with every loop, but be warned that this can create a lot of files, and a lot of space
-rem these files can be useful for analysis, but you may want to purge the archives folder every so often
-python py/upgrade_pip_package.py
-python py/latest_thread_to_urls.py
-rem python py/archive_logs.py
+python py/upgrade_pip_package.py cyberdrop-dl & cls
+python py/latest_thread_to_urls.py & cls
+python py/archive_logs.py & cls
 
 set cdl_ver=
 for /f "tokens=2 delims= " %%a in ('cyberdrop-dl --version') do set "cdl_ver=%%~a"

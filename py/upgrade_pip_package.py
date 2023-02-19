@@ -101,6 +101,7 @@ def main():
 
 if __name__ == "__main__":
     try:
+        print("Running upgrade_pip_package.py")
         main()
     except ValueError as e:
         print(e)

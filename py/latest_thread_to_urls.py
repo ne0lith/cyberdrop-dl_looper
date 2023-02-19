@@ -1,20 +1,17 @@
-import os
+from pathlib import Path
 
-current_dir = os.path.dirname(os.path.realpath(__file__))
-os.chdir(current_dir)
+current_dir = Path(__file__).resolve().parent
 
 
 def update_urls_file(all_urls_path, latest_forum_posts_path):
     try:
-        with open(all_urls_path, "r") as all_urls_file:
-            all_urls = all_urls_file.read().splitlines()
+        all_urls = all_urls_path.read_text().splitlines()
     except FileNotFoundError:
         print(f"Could not find {all_urls_path}")
         return
 
     try:
-        with open(latest_forum_posts_path, "r") as latest_forum_posts_file:
-            latest_forum_posts = latest_forum_posts_file.read().splitlines()
+        latest_forum_posts = latest_forum_posts_path.read_text().splitlines()
     except FileNotFoundError:
         print(f"Could not find {latest_forum_posts_path}")
         return
@@ -45,39 +42,40 @@ def update_urls_file(all_urls_path, latest_forum_posts_path):
         print(url)
 
     try:
-        with open(all_urls_path, "w") as all_urls_file:
-            all_urls_file.write("\n".join(updated_all_urls))
+        all_urls_path.write_text("\n".join(updated_all_urls))
     except Exception as e:
         print(f"Could not write to {all_urls_path}: {e}")
         return
 
 
 def run_it_up(urls_file_path=None, latest_forum_posts_path=None):
-    all_urls_path = urls_file_path
-    latest_forum_posts_path = latest_forum_posts_path
-    confirmation_file_path = os.path.join(current_dir, ".confirmation")
+    all_urls_path = Path(urls_file_path)
+    latest_forum_posts_path = Path(latest_forum_posts_path)
+    confirmation_file_path = current_dir / ".confirmation"
 
-    if os.path.exists(confirmation_file_path):
+    if confirmation_file_path.exists():
         update_urls_file(all_urls_path, latest_forum_posts_path)
     else:
-        file_name = os.path.basename(all_urls_path)
+        file_name = all_urls_path.name
         response = input(
-            f"Are you sure you want to irreversibly alter the {file_name} file?\nThis action cannot be undone.\nType 'yes' to continue.\nYou will not be asked again as long as .confirmation exists: "
+            f"Are you sure you want to irreversibly alter the {file_name} file?\nThis action cannot be undone.\nType 'y' to continue.\nYou will not be asked again as long as .confirmation exists: "
         )
-        if response.lower() == "yes":
-            with open(confirmation_file_path, "w") as f:
-                f.write("Confirmed")
+        if response.lower() == "y":
+            confirmation_file_path.touch()
             update_urls_file(all_urls_path, latest_forum_posts_path)
         else:
             print("Operation cancelled.")
 
 
 def main():
-    urls_txt = os.path.abspath("../logs/urls.txt")
-    latest_forum_post_txt = os.path.abspath("../logs/latest_forum_post.txt")
+    current_dir = Path(__file__).resolve().parent
+    logs_dir = current_dir.parent / "logs"
+    urls_txt = logs_dir / "urls.txt"
+    latest_forum_post_txt = logs_dir / "latest_forum_post.txt"
 
     run_it_up(urls_file_path=urls_txt, latest_forum_posts_path=latest_forum_post_txt)
 
 
 if __name__ == "__main__":
+    print("Running latest_thread_to_urls.py")
     main()
