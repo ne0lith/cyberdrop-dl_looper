@@ -1,9 +1,9 @@
 ## cyberdrop-dl_looper
 
 This environment assumes a few things:
-- Python can be run by typing "python" in your cmd/terminal.
-- Pip can be run by typing "pip" in your cmd/terminal.
-- Cyberdrop-dl can be run by typing "cyberdrop-dl" in your cmd/terminal.
+- Python can be run by entering "python" in your cmd/terminal.
+- Pip can be run by entering "pip" in your cmd/terminal.
+- Cyberdrop-dl can be run by entering "cyberdrop-dl" in your cmd/terminal.
 
 If so, you can move on! If not, sorry!
 - Update the config.yaml with your preferences. (we're using what I found most convenient.)
