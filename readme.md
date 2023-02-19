@@ -16,8 +16,3 @@ errored_urls_file, unsupported_urls_file, log_file
 ```
 - Add your urls to logs/urls.txt
 - Run looper.bat
-
-On my list of things to do
-
-- [ ] Create a looper.py for that use case.
-- [ ] Create a looper.ps1 for that use case.
