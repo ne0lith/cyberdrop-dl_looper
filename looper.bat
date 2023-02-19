@@ -7,10 +7,8 @@ goto set_vars
 set loop_count=0
 set loop_limit=10
 
-set current_dir=%~dp0
-
 title Cyberdrop-DL -- %~n0 
-pushd %current_dir%
+pushd %~dp0
 goto update
 
 :update
