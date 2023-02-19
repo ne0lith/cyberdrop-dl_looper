@@ -9,7 +9,7 @@ If so, you can move on! If not, sorry!
 - Update the config.yaml with your preferences. (we're using what I found most convenient.)
 ```
 Don't edit the path of the input_file, or output_last_forum_post_file;
-Unless you modify lines 76-77 of py/latest_thread_to_urls.py to accomodate.
+Unless you modify lines 73-74 of py/latest_thread_to_urls.py to accomodate.
 
 Also, leave these paths alone if you're using archive_logs.py
 errored_urls_file, unsupported_urls_file, log_file
