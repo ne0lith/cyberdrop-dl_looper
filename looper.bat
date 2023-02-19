@@ -14,7 +14,7 @@ pushd %current_dir%
 goto update
 
 :update
-rem these 2 scripts will upgrade pip every loop, if needed
+rem these 2 scripts will upgrade cyberdrop-dl every loop, if needed
 rem and update your urls.txt with the latest thread post url that you have scraped
 python py/upgrade_pip_package.py
 python py/latest_thread_to_urls.py
