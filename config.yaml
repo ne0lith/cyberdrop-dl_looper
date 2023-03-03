@@ -40,6 +40,7 @@
       dont_show_overall_progress: false
       dont_show_thread_progress: false
       hide_new_progress: false
+      refresh_rate: 10
     Ratelimiting:
       connection_timeout: 15
       ratelimit: 7
@@ -53,7 +54,7 @@
       output_errored_urls: true
       output_unsupported_urls: true
       proxy: ''
-      remove_bunkr_identifier: true
+      remove_bunkr_identifier: false
       required_free_space: 25
       simultaneous_downloads_per_domain: 4
       skip_download_mark_completed: false
