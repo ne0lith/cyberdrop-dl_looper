@@ -23,7 +23,7 @@ goto download
 :download
 title %cdl_ver%: Looped (%loop_count%) times. -- %time%
 cyberdrop-dl --config-file config.yaml
-python py/webhook-results.py & cls
+python py/send_webhook.py & cls
 goto loop
 
 :loop
