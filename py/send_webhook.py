@@ -1,20 +1,82 @@
 import re
 import pathlib
-import requests
 from datetime import datetime
 
 
-def send_discord_webhook(webhook_url, message):
-    payload = {"content": message}
-    headers = {"Content-Type": "application/json"}
-    try:
-        response = requests.post(webhook_url, json=payload, headers=headers)
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Error sending webhook: {e}")
-        return None
+def check_dependencies(packages):
+    import importlib
+    import subprocess
+
+    for package in packages:
+        try:
+            importlib.import_module(package)
+            print(f"{package} is already installed.")
+        except ImportError:
+            print(f"{package} is not installed. Installing...")
+            subprocess.check_call(["pip", "install", package])
+
+
+def set_timetaken(t_seconds):
+    t_seconds = int(t_seconds)
+    if t_seconds >= 3600:
+        hours = t_seconds // 3600
+        minutes = (t_seconds % 3600) // 60
+        seconds = t_seconds % 60
+        hours, minutes, seconds = str(hours), str(minutes), str(seconds)
+        output = f"Scrape took: {hours}h {minutes}m {seconds}s"
+    elif t_seconds >= 60 and t_seconds < 3600:
+        minutes = t_seconds // 60
+        seconds = t_seconds % 60
+        minutes, seconds = str(minutes), str(seconds)
+        output = f"Scrape took: {minutes} minutes and {seconds} seconds"
     else:
-        return response.status_code
+        t_seconds = str(t_seconds)
+        output = f"Scrape took: {t_seconds} seconds"
+    return output
+
+
+def calculate_timetaken(log_file):
+    try:
+        pattern = r"^(\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2},\d{3}):"
+        with open(log_file, "r") as f:
+            first_timestamp = None
+            last_timestamp = None
+            for line in f:
+                match = re.match(pattern, line)
+                if match:
+                    timestamp = match.group(1)
+                    if not first_timestamp:
+                        first_timestamp = timestamp
+                    last_timestamp = timestamp
+        if first_timestamp and last_timestamp:
+            fmt = "%Y-%m-%d %H:%M:%S,%f"
+            first_dt = datetime.strptime(first_timestamp, fmt)
+            last_dt = datetime.strptime(last_timestamp, fmt)
+            time_diff = (last_dt - first_dt).total_seconds()
+            return int(time_diff)
+    except Exception as e:
+        print(f"Error calculating timetaken: {e}")
+        return None
+
+
+def send_discord_embed(webhook_url, downloaded, failed, skipped, total_time):
+    import random
+    from discord_webhook import DiscordWebhook, DiscordEmbed
+
+    webhook = DiscordWebhook(url=webhook_url)
+    color_choice = random.choice(["B29DD9", "FDFD98", "FE6B64", "77DD77", "779ECB"])
+    embed = DiscordEmbed(
+        title="Cyberdrop-DL Stats",
+        color=color_choice,
+        rate_limit_retry=True,
+    )
+    embed.set_footer(text=set_timetaken(int(total_time)))
+    embed.set_timestamp()
+    embed.add_embed_field(name="Downloaded", value=f"{str(downloaded)}", inline=True)
+    embed.add_embed_field(name="Failed", value=f"{str(failed)}", inline=True)
+    embed.add_embed_field(name="Skipped", value=f"{str(skipped)}", inline=True)
+    webhook.add_embed(embed)
+    webhook.execute()
 
 
 def parse_log_file(log_file):
@@ -47,6 +109,11 @@ def main():
 
     if webhook_file.exists():
         try:
+            check_dependencies(["discord_webhook"])
+        except Exception as e:
+            print(f"Error checking dependencies: {e}")
+            return
+        try:
             with webhook_file.open("r") as f:
                 webhook_url = f.read().strip()
         except Exception as e:
@@ -69,12 +136,16 @@ def main():
         print(f"Incomplete log file: {log_file}")
         return
 
-    current_time = datetime.now().strftime("%Y-%m-%d %I:%M %p")
-    message = f"Downloaded: {files_complete}\nSkipped: {files_skipped}\nFailed: {files_failed}\nCompleted as of: {current_time}"
-
-    status_code = send_discord_webhook(webhook_url, message)
-    print(f"Discord webhook status code: {status_code}")
-    print(message)
+    if files_complete >= 1:
+        send_discord_embed(
+            webhook_url,
+            files_complete,
+            files_failed,
+            files_skipped,
+            calculate_timetaken(log_file),
+        )
+    else:
+        print("Nothing downloaded, not sending webhook message.")
 
 
 if __name__ == "__main__":
