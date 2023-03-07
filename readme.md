@@ -17,6 +17,7 @@ errored_urls_file, unsupported_urls_file, log_file
 - Add your urls to logs/urls.txt
 - Run looper.bat
 
-### If you'd like to send a webhook on every completion
+#### If you'd like to send a webhook on every completion
 - In the logs folder, create a ".webhook" file.
 - Put your discord webhook link as the only content in the file.
+- (currently only integrated in the looper.bat)
