@@ -1,5 +1,8 @@
 ## cyberdrop-dl_looper
 
+# This is defunct atm, feel free to modify the code and get it working yourself.
+# Will redo from the ground up in v5 of CDL.
+
 This environment assumes a few things:
 - Python can be run by entering "python" in your cmd/terminal.
 - Pip can be run by entering "pip" in your cmd/terminal.
