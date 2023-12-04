@@ -11,7 +11,6 @@ for /L %%i in (1, 1, %loop_count%) do (
     call :RunSubBatch
 )
 
-popd
 goto :eof
 
 :RunSubBatch
