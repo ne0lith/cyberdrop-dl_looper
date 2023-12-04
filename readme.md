@@ -13,7 +13,6 @@ Follow these steps to update to the latest release:
 
 * Download the new release as a .zip file.
 * Extract the contents of the .zip file and ensure that the files are placed in the same directory as your v5 start file.
-* Overwrite your existing start file with the one from the downloaded zip.
 * Place the 'mods' folder in the same directory as your start file.
 
 Your directory structure should resemble the following:
@@ -25,7 +24,7 @@ Your directory structure should resemble the following:
 /venv (will only be there if you have ran v5 from the start file at least once)
 looper.bat
 looper_mods.bat
-Start Windows.bat
+Start.bat
 ```
 
 To run the program:
