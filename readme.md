@@ -1,28 +1,15 @@
 ## cyberdrop-dl_looper
 
-# This is defunct atm, feel free to modify the code and get it working yourself.
-# Will redo from the ground up in v5 of CDL.
+# This has only been developed to work if you use the V5 start file.
 
 This environment assumes a few things:
+- You are using the new v5 start file.
 - Python can be run by entering "python" in your cmd/terminal.
-- Pip can be run by entering "pip" in your cmd/terminal.
-- Cyberdrop-dl can be run by entering "cyberdrop-dl" in your cmd/terminal.
 
-If so, you can move on! If not, sorry!
-- Update the config.yaml with your preferences. (we're using what I found most convenient.)
-```
-Don't edit the path of the input_file, or output_last_forum_post_file;
-Unless you modify lines 73-74 of py/latest_thread_to_urls.py to accomodate.
+Download the new release .zip, or find any other way to get these files in the same directory as your v5 start file.
 
-Also, leave these paths alone if you're using archive_logs.py
-errored_urls_file, unsupported_urls_file, log_file
-```
-- Add your urls to logs/urls.txt
-- Run looper.bat
+make sure you overwrite your start file, with the one from the zip.
+also make sure you place the mods folder in the same directory as your start file.
 
-#### If you'd like to send a webhook on every completion
-- In the logs folder, create a ".webhook" file.
-- Put your discord webhook link as the only content in the file.
-- (currently only integrated in the looper.bat)
-
-![Webhook Example](https://i.imgur.com/BJSvMeG.jpg)
+You can run looper.bat to just loop it normally
+You can run looper_mods.bat to have it loop, but also the option to backup your logs directory + urls file, each run.
