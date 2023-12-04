@@ -26,7 +26,6 @@ for /L %%i in (1, 1, %loop_count%) do (
     )
 )
 
-popd
 goto :eof
 
 :RunSubBatch
