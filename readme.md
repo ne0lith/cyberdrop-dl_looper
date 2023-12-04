@@ -6,12 +6,17 @@ This environment assumes a few things:
 - You are using the new v5 start file.
 - Python can be run by entering "python" in your cmd/terminal.
 
-Download the new release .zip, or find any other way to get these files in the same directory as your v5 start file.
+### Updating and Installation Instructions
 
-make sure you overwrite your start file, with the one from the zip.
-also make sure you place the mods folder in the same directory as your start file.
+Follow these steps to update to the latest release:
 
-Your directory should look like this once the files are added:
+* Download the new release as a .zip file.
+* Extract the contents of the .zip file and ensure that the files are placed in the same directory as your v5 start file.
+* Overwrite your existing start file with the one from the downloaded zip.
+* Place the 'mods' folder in the same directory as your start file.
+
+Your directory structure should resemble the following:
+
 ```
 /AppData
 /Downloads
@@ -22,5 +27,12 @@ looper_mods.bat
 Start Windows.bat
 ```
 
-You can run looper.bat to just loop it normally
-You can run looper_mods.bat to have it loop, but also the option to backup your logs directory + urls file, each run.
+To run the program:
+
+- Execute `looper.bat` for normal looping.
+- Execute `looper_mods.bat` for looping with the option to backup your logs directory and urls file after each run.
+
+Be sure to edit either .bat file for any user configurables. i.e. `looper_mods.bat` requires the name of the specific profile you need archived.
+
+## To Do
+Will be adding back discord webhook support asap.
