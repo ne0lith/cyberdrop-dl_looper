@@ -15,7 +15,7 @@ popd
 goto :eof
 
 :RunSubBatch
-start /wait "Cyberdrop-DL" "Start Windows.bat"
+start /wait "Cyberdrop-DL" "Start.bat"
 timeout /t 3 /nobreak >nul
 goto :eof
 
