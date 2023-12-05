@@ -5,6 +5,7 @@
 This environment assumes a few things:
 - You are using the new v5 start file.
 - You are using the Default profile. (if not, just rename all instances of "Default", in the looper_mods.bat)
+- You have set your profile as the default profile in cyberdrop's UI.
 - Python can be run by entering "python" in your cmd/terminal.
 
 ### Updating and Installation Instructions
