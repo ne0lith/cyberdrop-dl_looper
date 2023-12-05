@@ -42,7 +42,7 @@ To run the program:
 - Execute `looper.bat` for normal looping. The default loop count is 20. `set "loop_count=20"`
 - Execute `looper_mods.bat` for looping with the option to backup your logs directory and urls file after each run, and send run results via discord webhook. The default loop count is 20. `set "loop_count=20"`
 
-Be sure to edit either .bat file for any user configurables. i.e. `looper_mods.bat` requires the name of the specific profile you need archived.
+Be sure to edit `looper_mods.bat`, as it requires the name of the specific profile you are looping with.
 
 ## To Archive Logs each run
 - Within `looper_mods.bat` ensure `set "backup_logs=true"` is indeed true.
