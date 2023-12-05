@@ -26,6 +26,7 @@ Your final directory structure should resemble the following:
   - /Downloads
   - /mods
     - file_management.py
+    - send_webhook_results.py
   - /Old Files
   - /venv
   - looper.bat
@@ -38,9 +39,13 @@ Your final directory structure should resemble the following:
 To run the program:
 
 - Execute `looper.bat` for normal looping.
-- Execute `looper_mods.bat` for looping with the option to backup your logs directory and urls file after each run.
+- Execute `looper_mods.bat` for looping with the option to backup your logs directory and urls file after each run, and send run results via discord webhook.
 
 Be sure to edit either .bat file for any user configurables. i.e. `looper_mods.bat` requires the name of the specific profile you need archived.
 
-## To Do
-Will be adding back discord webhook support asap.
+## To Archive Logs each run
+- Within `looper_mods.bat` ensure `set "backup_logs=true"` is indeed true.
+
+## To send run results via Discord Webhook
+- Within `looper_mods.bat` ensure `set "send_webhook=true"` is indeed true
+- Within `mods\send_webhook_results.py` find line 8 and replace `YOUR_WEBHOOK_URL_HERE` with your unique webhook_url.
