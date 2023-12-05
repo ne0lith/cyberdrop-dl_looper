@@ -22,12 +22,12 @@ Your final directory structure should resemble the following:
 
 ```
 - /
-  - AppData
-  - Downloads
-  - mods
+  - /AppData
+  - /Downloads
+  - /mods
     - file_management.py
-  - Old Files
-  - venv
+  - /Old Files
+  - /venv
   - looper.bat
   - looper_mods.bat
   - start.bat
