@@ -46,6 +46,7 @@ Be sure to edit either .bat file for any user configurables. i.e. `looper_mods.b
 
 ## To Archive Logs each run
 - Within `looper_mods.bat` ensure `set "backup_logs=true"` is indeed true.
+- Be careful with this, as depending on your log size, this can quickly eat up storage space. I recommend regularly cleaning some out.
 
 ## To send run results via Discord Webhook
 - Within `looper_mods.bat` ensure `set "send_webhook=true"` is indeed true
