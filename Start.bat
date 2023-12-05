@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 
 set PYTHON=
 set VENV_DIR=
-set "COMMANDLINE_ARGS=--portable --download"
+set "COMMANDLINE_ARGS=--download"
 
 
 if not defined PYTHON (set PYTHON=python)
@@ -30,9 +30,6 @@ echo:
 echo Installing / Updating Cyberdrop-DL
 pip install --upgrade cyberdrop-dl
 echo:
-
-echo Installing Cyberdrop-Dl
-poetry install
 
 cyberdrop-dl %COMMANDLINE_ARGS%
 exit
