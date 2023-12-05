@@ -6,7 +6,7 @@ pushd "%~dp0"
 REM User Config
 set "loop_count=20"
 set "profile_name=Default"
-set "backup_logs=true"
+set "backup_logs=false"
 set "send_webhook=false"
 
 for /L %%i in (1, 1, %loop_count%) do (
@@ -22,7 +22,7 @@ for /L %%i in (1, 1, %loop_count%) do (
 
     REM Send a discord webhook to notify you of final numbers
     if "%send_webhook%"=="true" (
-        call :RunPythonScript "mods\send_webhook_results.py" "!profile_name!"
+        python "mods\send_webhook_results.py" "!profile_name!"
     )
 )
 
