@@ -22,7 +22,7 @@ Your final directory structure should resemble the following:
 /Downloads
 /mods
 /Old Files
-/venv (will only be there if you have ran v5 from the start file at least once)
+/venv
 looper.bat
 looper_mods.bat
 Start.bat
