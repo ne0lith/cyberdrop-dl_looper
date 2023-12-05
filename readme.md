@@ -31,6 +31,7 @@ Your final directory structure should resemble the following:
   - /venv
   - looper.bat
   - looper_mods.bat
+  - readme.md (can delete)
   - start.bat
   - Start Windows.bat
 
