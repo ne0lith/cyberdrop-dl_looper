@@ -28,7 +28,8 @@ Your final directory structure should resemble the following:
   - venv
   - looper.bat
   - looper_mods.bat
-  - Start.bat
+  - start.bat
+  - Start Windows.bat
 
 ```
 
