@@ -17,7 +17,7 @@ for /L %%i in (1, 1, %loop_count%) do (
 
     REM Backup all logs each run (this can take up GIGS in no time. be sure to delete every once in a while.)
     if "%backup_logs%"=="true" (
-        python mods\file_management.py "!profile_name!"
+        python "mods\file_management.py" "!profile_name!"
     )
 
     REM Send a discord webhook to notify you of final numbers
