@@ -19,14 +19,17 @@ Follow these steps to update to the latest release:
 Your final directory structure should resemble the following:
 
 ```
-/AppData
-/Downloads
-/mods
-/Old Files
-/venv
-looper.bat
-looper_mods.bat
-Start.bat
+- /
+  - AppData
+  - Downloads
+  - mods
+    - file_management.py
+  - Old Files
+  - venv
+  - looper.bat
+  - looper_mods.bat
+  - Start.bat
+
 ```
 
 To run the program:
