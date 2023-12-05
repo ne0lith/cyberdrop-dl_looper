@@ -14,7 +14,7 @@ This environment assumes a few things:
 
 Follow these steps to update to the latest release:
 
-* [Download the new release](https://github.com/n30liberal/cyberdrop-dl_looper/archive/refs/heads/main.zip) as a .zip file.
+* [Download this repo](https://github.com/n30liberal/cyberdrop-dl_looper/archive/refs/heads/main.zip) as a .zip file.
 * Extract the contents of the .zip file and ensure that the files are placed in the same directory as your v5 start file.
 * Place the 'mods' folder in the same directory as your start file.
 
