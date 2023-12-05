@@ -29,7 +29,7 @@ for /L %%i in (1, 1, %loop_count%) do (
 goto :eof
 
 :RunSubBatch
-start /wait "Cyberdrop-DL" "Start.bat"
+start /wait "Cyberdrop-DL" "start.bat"
 timeout /t 3 /nobreak >nul
 goto :eof
 
