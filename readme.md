@@ -21,20 +21,19 @@ Follow these steps to update to the latest release:
 Your final directory structure should resemble the following:
 
 ```
-- /
-  - /AppData
-  - /Downloads
-  - /mods
-    - file_management.py
-    - send_webhook_results.py
-  - /Old Files
-  - /venv
-  - looper.bat
-  - looper_mods.bat
-  - readme.md (can delete)
-  - start.bat
-  - Start Windows.bat
-
+/
+├── /AppData
+├── /Downloads
+├── /mods
+│   ├── file_management.py
+│   └── send_webhook_results.py
+├── /Old Files
+├── /venv
+├── looper.bat
+├── looper_mods.bat
+├── readme.md (can delete)
+├── start.bat
+└── Start Windows.bat
 ```
 
 To run the program:
