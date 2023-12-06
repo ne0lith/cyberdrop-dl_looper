@@ -21,14 +21,13 @@ Follow these steps to update to the latest release:
 Your final directory structure should resemble the following:
 
 ```
-/
-├─ /AppData
-├─ /Downloads
-├─ /mods
+├─ AppData/
+├─ Downloads/
+├─ mods/
 │  ├─ file_management.py
 │  └─ send_webhook_results.py
-├─ /Old Files
-├─ /venv
+├─ Old Files/
+├─ venv/
 ├─ looper.bat
 ├─ looper_mods.bat
 ├─ readme.md (can delete)
