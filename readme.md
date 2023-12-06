@@ -35,7 +35,7 @@ Your final directory structure should resemble the following:
 └─ Start Windows.bat
 ```
 
-To run the program:
+## To run the program:
 
 - Execute `looper.bat` for normal looping. The default loop count is 20. `set "loop_count=20"`
 - Execute `looper_mods.bat` for looping with the option to backup your logs directory and urls file after each run, and send run results via discord webhook. The default loop count is 20. `set "loop_count=20"`
