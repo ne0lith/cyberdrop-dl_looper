@@ -8,14 +8,13 @@ from pathlib import Path
 def backup_logs(profile_name):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d__%I_%M_%S_%p")
 
-    logs_dir = "Logs"
-    archived_logs_dir = "Archived_Logs"
-
     current_dir = Path(__file__).resolve().parent
     profile_dir = current_dir.parent / "AppData" / "Configs" / profile_name
 
+    logs_dir = "Logs"
     logs_path = profile_dir / logs_dir
 
+    archived_logs_dir = "Archived_Logs"
     archived_logs_path = profile_dir / archived_logs_dir
     archived_logs_path.mkdir(parents=True, exist_ok=True)
 
