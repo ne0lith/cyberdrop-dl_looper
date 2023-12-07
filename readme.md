@@ -1,6 +1,6 @@
 ## cyberdrop-dl_looper
 
-### This has only been developed to work if you use the V5 start file.
+### This has only been developed to work if you use the V5 start file(s).
 
 This environment assumes a few things:
 - You are using the new v5 start file.
