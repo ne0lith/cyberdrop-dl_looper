@@ -10,6 +10,7 @@ This environment assumes a few things:
     - You have set your profile as the default profile in cyberdrop's UI.
     - You replace "Default" with your profile name in `looper_mods.bat`.
 - Python can be run by entering "python" in your cmd/terminal.
+  - "python3" if on linux.
 
 ### Updating and Installation Instructions
 
