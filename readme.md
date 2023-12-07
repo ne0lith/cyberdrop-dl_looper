@@ -3,7 +3,7 @@
 ### This has only been developed to work if you use the V5 start file(s).
 
 This environment assumes a few things:
-- You are **not** using mac.
+- You are **not** using macOS.
 - You are using the new v5 start file.
 - You are using the Default profile.
   - If not the Default profile:
