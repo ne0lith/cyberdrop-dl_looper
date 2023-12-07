@@ -18,7 +18,7 @@ Follow these steps to update to the latest release:
 * Extract the contents of the .zip file and ensure that the files are placed in the same directory as your v5 start file.
 * Place the 'mods' folder in the same directory as your start file.
 
-Your final directory structure should resemble the following:
+Your final directory structure should look similar to the following:
 
 ```
 ├─ AppData/
