@@ -31,6 +31,7 @@ Your final directory structure should look similar to the following:
 │  └─ send_webhook_results.py
 ├─ Old Files/
 ├─ venv/
+├─ config.txt
 ├─ looper.bat
 ├─ looper.sh
 ├─ looper_mods.bat
