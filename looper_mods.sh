@@ -1,9 +1,11 @@
 #!/bin/sh
 
-source config.txt
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
-for ((i = 1; i <= loop_count; i++)); do
-    echo "Running start.sh - Iteration $i"
+. "$SCRIPT_DIR/config.txt"
+
+for i in $(seq 1 $loop_count); do
+    echo "Running start.sh - Iteration $i of $loop_count"
     sh start.sh
 
     if [ "$backup_logs" = true ]; then
@@ -14,6 +16,6 @@ for ((i = 1; i <= loop_count; i++)); do
         python3 mods/send_webhook_results.py "$profile_name" "$machine_name"
     fi
 
-    echo "Completed iteration $i"
+    echo "Completed iteration $i of $loop_count"
     echo
 done
