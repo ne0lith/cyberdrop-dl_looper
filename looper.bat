@@ -3,8 +3,8 @@ setlocal enabledelayedexpansion
 
 pushd "%~dp0"
 
-REM User Config
-set "loop_count=20"
+REM Read config from file
+for /f "delims=" %%a in (config.txt) do set %%a
 
 for /L %%i in (1, 1, %loop_count%) do (
     echo Running iteration %%i
