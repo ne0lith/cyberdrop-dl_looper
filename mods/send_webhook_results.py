@@ -87,11 +87,7 @@ def read_results(profile_name, machine_name):
                         time_taken = end_time - start_time
                         results["Time Taken"] = str(time_taken)
 
-                        if machine_name is not None and machine_name not in [
-                            "",
-                            "None",
-                            "none",
-                        ]:
+                        if machine_name and machine_name.lower() not in ["", "none"]:
                             results["Machine Name"] = machine_name
 
     except FileNotFoundError:
