@@ -32,9 +32,12 @@ Your final directory structure should look similar to the following:
 ├─ Old Files/
 ├─ venv/
 ├─ looper.bat
+├─ looper.sh
 ├─ looper_mods.bat
+├─ looper_mods.sh
 ├─ readme.md (can delete)
 ├─ start.bat
+├─ start.sh
 └─ Start Windows.bat
 ```
 
