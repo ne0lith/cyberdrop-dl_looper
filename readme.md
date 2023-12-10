@@ -4,11 +4,12 @@
 
 This environment assumes a few things:
 - You are **not** using macOS.
+  - Currently only supports windows + linux.
 - You are using the new v5 start file.
 - You are using the Default profile.
   - If not the Default profile:
     - You have set your profile as the default profile in cyberdrop's UI.
-    - You replace "Default" with your profile name in `looper_mods.bat`.
+    - You replace "Default" with your profile name in `looper_mods`.
 - Python can be run by entering "python" in your cmd/terminal.
   - "python3" if on linux.
 
@@ -39,15 +40,15 @@ Your final directory structure should look similar to the following:
 
 ## To run the program
 
-- Execute `looper.bat|sh` for normal looping. The default loop count is 20. `set "loop_count=20"`
-- Execute `looper_mods.bat|sh` for looping with the option to backup your logs directory and urls file after each run, and send run results via discord webhook. The default loop count is 20. `set "loop_count=20"`
+- Execute `looper` for normal looping. The default loop count is 20. `"loop_count=20"`
+- Execute `looper_mods` for looping with the option to backup your logs directory and urls file after each run, and send run results via discord webhook. The default loop count is 20. `"loop_count=20"`
 
-Be sure to edit `looper_mods.bat|sh`, as it requires the name of the specific profile you are looping with.
+Be sure to edit `looper_mods`, as it requires the name of the specific profile you are looping with.
 
 ## To Archive Logs each run
-- Within `looper_mods.bat|sh` ensure `set "backup_logs=true"` is indeed true.
+- Within `looper_mods` ensure `"backup_logs=true"` is indeed true.
 - Be careful with this, as depending on your log size, this can quickly eat up storage space. I recommend regularly cleaning some out.
 
 ## To send run results via Discord Webhook
-- Within `looper_mods.bat|sh` ensure `set "send_webhook=true"` is indeed true
+- Within `looper_mods` ensure `"send_webhook=true"` is indeed true
 - Within `mods\send_webhook_results.py` find line 8 and replace `YOUR_WEBHOOK_URL_HERE` with your unique webhook_url.
