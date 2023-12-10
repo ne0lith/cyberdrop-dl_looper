@@ -3,12 +3,8 @@ setlocal enabledelayedexpansion
 
 pushd "%~dp0"
 
-REM User Config
-set "loop_count=20"
-set "profile_name=Default"
-set "machine_name=Default"
-set "backup_logs=false"
-set "send_webhook=false"
+REM Read config from file
+for /f "delims=" %%a in (config.txt) do set %%a
 
 for /L %%i in (1, 1, %loop_count%) do (
     echo Running iteration %%i
