@@ -1,0 +1,5 @@
+loop_count=20
+profile_name=Default
+machine_name=Default
+backup_logs=false
+send_webhook=false
