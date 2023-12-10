@@ -7,7 +7,7 @@ REM Read config from file
 for /f "delims=" %%a in (config.txt) do set %%a
 
 for /L %%i in (1, 1, %loop_count%) do (
-    echo Running iteration %%i
+    echo Running iteration %%i of %loop_count%
     call :RunSubBatch
 
     REM Call Postrun functions
