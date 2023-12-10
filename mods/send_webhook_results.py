@@ -5,10 +5,10 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 
-webhook_url = "YOUR_WEBHOOK_URL_HERE"
+webhook_url = "YOUR_WEBHOOK_URL"
 
 
-def read_results(profile_name):
+def read_results(profile_name, machine_name):
     current_dir = Path(__file__).resolve().parent
     profile_dir = current_dir.parent / "AppData" / "Configs" / profile_name
     log_file = profile_dir / "Logs" / "downloader.log"
@@ -87,6 +87,13 @@ def read_results(profile_name):
                         time_taken = end_time - start_time
                         results["Time Taken"] = str(time_taken)
 
+                        if machine_name is not None and machine_name not in [
+                            "",
+                            "None",
+                            "none",
+                        ]:
+                            results["Machine Name"] = machine_name
+
     except FileNotFoundError:
         print(f"Log file not found: {log_file}")
 
@@ -117,6 +124,7 @@ def send_webhook(results, webhook_url, profile_name):
 def main():
     parser = argparse.ArgumentParser(description="Send webhook for a given profile.")
     parser.add_argument("profile_name", help="Name of the profile")
+    parser.add_argument("machine_name", help="Name of the machine running the scraper")
 
     args = parser.parse_args()
 
@@ -126,7 +134,7 @@ def main():
         input("Press Enter to exit...")
         sys.exit(1)
 
-    results = read_results(args.profile_name)
+    results = read_results(args.profile_name, args.machine_name)
 
     if not results:
         print(f"No results found for profile '{args.profile_name}'. Exiting.")
