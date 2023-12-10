@@ -41,6 +41,7 @@ Your final directory structure should look similar to the following:
 ├─ start.sh
 └─ Start Windows.bat
 ```
+Although you don't need everything from this repo. Only the `mods/` directory, along with the .py scripts, and your preferred looper script.
 
 ## To run the program
 
