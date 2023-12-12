@@ -3,3 +3,4 @@ profile_name=Default
 machine_name=Default
 backup_logs=false
 send_webhook=false
+sleep_time=3600
