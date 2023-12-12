@@ -22,6 +22,7 @@ Follow these steps to update to the latest release:
 * Place the 'mods' folder in the same directory as your start file.
 
 Your final directory structure should look similar to the following:
+Although you don't need everything from this repo. Only the `mods/` directory, along with the `.py` scripts, and your preferred looper script.
 
 ## Windows
 ```
@@ -35,8 +36,7 @@ Your final directory structure should look similar to the following:
 ├─ config.txt
 ├─ looper.bat
 ├─ looper_mods.bat
-├─ start.bat
-└─ Start Windows.bat
+└─ start.bat
 ```
 
 ## Linux
@@ -51,10 +51,8 @@ Your final directory structure should look similar to the following:
 ├─ config.txt
 ├─ looper.sh
 ├─ looper_mods.sh
-├─ start.sh
+└─ start.sh
 ```
-
-Although you don't need everything from this repo. Only the `mods/` directory, along with the .py scripts, and your preferred looper script.
 
 ## To run the program
 
