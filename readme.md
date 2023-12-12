@@ -56,6 +56,8 @@ Your final directory structure should look similar to the following:
 └─ start.sh
 ```
 
+---
+
 ## To run the program
 
 - Within `config.txt` ensure `loop_count=20` is set to an amount you are happy with.
