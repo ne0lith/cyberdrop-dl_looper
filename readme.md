@@ -25,6 +25,7 @@ Your final directory structure should look similar to the following:
 
 ```
 ├─ AppData/
+├─ docker/ (can delete)
 ├─ Downloads/
 ├─ mods/
 │  ├─ file_management.py
