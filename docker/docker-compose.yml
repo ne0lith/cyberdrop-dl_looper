@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  cdl-docker:
+    container_name: cdl-docker
+    image: ne0lith/cdl-docker:latest
+    volumes:
+      - /path/to/AppData:/cyberdrop-dl/AppData
+      - /path/to/Downloads:/cyberdrop-dl/Downloads
+    restart: no
