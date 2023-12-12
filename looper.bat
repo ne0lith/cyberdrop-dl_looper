@@ -12,8 +12,7 @@ for /L %%i in (1, 1, %loop_count%) do (
     echo Completed iteration %%i of %loop_count%
     echo
     echo Sleeping for !sleep_time! seconds before the next iteration...
-    timeout /t !sleep_time! /nobreak >nul
-
+    timeout /t !sleep_time! /nobreak
 )
 
 goto :eof
