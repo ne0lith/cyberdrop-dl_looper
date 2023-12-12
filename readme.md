@@ -23,9 +23,9 @@ Follow these steps to update to the latest release:
 
 Your final directory structure should look similar to the following:
 
+## Windows
 ```
 ├─ AppData/
-├─ docker/ (can delete)
 ├─ Downloads/
 ├─ mods/
 │  ├─ file_management.py
@@ -34,14 +34,26 @@ Your final directory structure should look similar to the following:
 ├─ venv/
 ├─ config.txt
 ├─ looper.bat
-├─ looper.sh
 ├─ looper_mods.bat
-├─ looper_mods.sh
-├─ readme.md (can delete)
 ├─ start.bat
-├─ start.sh
 └─ Start Windows.bat
 ```
+
+## Linux
+```
+├─ AppData/
+├─ Downloads/
+├─ mods/
+│  ├─ file_management.py
+│  └─ send_webhook_results.py
+├─ Old Files/
+├─ venv/
+├─ config.txt
+├─ looper.sh
+├─ looper_mods.sh
+├─ start.sh
+```
+
 Although you don't need everything from this repo. Only the `mods/` directory, along with the .py scripts, and your preferred looper script.
 
 ## To run the program
