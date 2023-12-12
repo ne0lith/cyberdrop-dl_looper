@@ -1,0 +1,14 @@
+FROM python:3.11-alpine
+WORKDIR /cyberdrop-dl
+
+# Install build dependencies
+RUN apk add --no-cache \
+    gcc \
+    musl-dev
+
+RUN pip install --upgrade pip
+RUN pip install --upgrade cyberdrop-dl
+
+COPY . .
+
+CMD ["cyberdrop-dl", "--download"]
