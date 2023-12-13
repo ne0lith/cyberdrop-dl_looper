@@ -1,4 +1,4 @@
-loop_count=20
+loop_count=6
 profile_name=Default
 machine_name=Default
 backup_logs=false
