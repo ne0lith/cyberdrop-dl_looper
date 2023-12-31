@@ -1,0 +1,25 @@
+FROM python:3.11-alpine
+
+# Set working directory
+WORKDIR /cyberdrop-dl
+
+# Install necessary packages
+RUN apk add --no-cache openssh-server \
+    gcc \
+    musl-dev
+
+# Configure SSH
+RUN ssh-keygen -A && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    echo 'root:password' | chpasswd
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install cyberdrop-dl and its dependencies
+RUN pip install --upgrade cyberdrop-dl
+
+# Expose SSH port
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
