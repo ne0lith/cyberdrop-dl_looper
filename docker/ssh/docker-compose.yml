@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  cyberdrop-dl-container:
+    image: YOUR_IMAGE_NAME:latest
+    container_name: YOUR_CONTAINER_NAME
+    ports:
+      - "2222:22"
+    volumes:
+      - /mnt/docker/volumes/cdl-docker:/app # default files and directories excluding the database
+      - /mnt/docker/volumes/cdl-docker:/root/.local/share/Cyberdrop-DL # the default database directory
+    restart: always
